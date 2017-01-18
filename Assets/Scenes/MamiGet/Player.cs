@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
-{
+public class Player : MonoBehaviour {
 
 	// Use this for initialization
-	void Start ()
-	{
+	void Start () {
 		
 	}
 	
@@ -20,11 +18,9 @@ public class Player : MonoBehaviour
 
 	const float PLAYER_POS_LIMIT_X = 2.5f;
 
-	//const float SCALE_PER_MAMI = 0.015f;
-	const float SCALE_PER_MAMI = 0.18f;
+	const float SCALE_PER_MAMI = 0.015f;
 
-	void Update ()
-	{
+	void Update () {
 
 		//===============普通に操作する実験===============
 		/*
@@ -68,7 +64,7 @@ public class Player : MonoBehaviour
 
 		//プイレイヤーのスケール
 
-		transform.localScale = Vector3.one + Vector3.one * SCALE_PER_MAMI * Mathf.Sqrt (MainSystem.Score);
+		transform.localScale = Vector3.one + Vector3.one * MainSystem.Score * SCALE_PER_MAMI;
 
 	}
 }
