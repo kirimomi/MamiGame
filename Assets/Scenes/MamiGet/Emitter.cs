@@ -15,7 +15,7 @@ public class Emitter : MonoBehaviour {
 
 	float m_mamiPerSec;
 
-	const float MAMI_PER_SEC_MIN = 3f;//最小秒間出現（初期値）
+	const float MAMI_PER_SEC_MIN = 1f;//最小秒間出現（初期値）
 	const float MAMI_PER_SEC_MAX = 15f;//最大秒間出現
 	const float MAMI_PER_SEC_MAX_TIME = 25f;//この秒数でMAX
 
@@ -50,15 +50,15 @@ public class Emitter : MonoBehaviour {
 
 		//Vector3 spd = Vector3.up * -3.0f;
 		Vector3 spd = Vector3.zero;
-		if (20f < MainSystem.Counter) {
-			spd.x = Random.Range (-5.0f, 5.0f);
-			spd.y = -3f;
+		if (15f < MainSystem.Counter) {
+			spd.x = Random.Range (-3.0f, 3.0f);
+			spd.y = -1.5f;
 		} else if (10f < MainSystem.Counter) {
-			spd.x = Random.Range (-8.0f, 8.0f);
-			spd.y = Random.Range (-3f, -5f);
+			spd.x = Random.Range (-5.0f, 5.0f);
+			spd.y = Random.Range (-1.5f, -4f);
 		} else if (5f < MainSystem.Counter) {
-			spd.x = Random.Range (-10.0f, 10.0f);
-			spd.y = Random.Range (-3f, -10f);
+			spd.x = Random.Range (-8.0f, 8.0f);
+			spd.y = Random.Range (-3f, -6f);
 		} else {
 			spd.x = Random.Range (-14.0f, 14.0f);
 			spd.y = Random.Range (-5f, -15f);

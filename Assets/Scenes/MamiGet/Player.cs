@@ -18,7 +18,7 @@ public class Player : MonoBehaviour {
 
 	const float PLAYER_POS_LIMIT_X = 2.5f;
 
-	const float SCALE_PER_MAMI = 0.01f;
+	const float SCALE_PER_MAMI = 0.015f;
 
 	void Update () {
 
