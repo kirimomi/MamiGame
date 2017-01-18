@@ -19,12 +19,21 @@ public class MainSystem : MonoBehaviour {
 	public GameObject ReplayButton;
 	public GameObject BackGround;
 
+	public static AudioSource Audio;
+
+	public AudioClip BGM;
+	public AudioClip END;
+
+
 	int m_highScore;
 
 	public const float PLAY_TIME = 30f;
 
 	// Use this for initialization
 	void Start () {
+		Audio = GetComponent<AudioSource> ();
+		Audio.clip = BGM;
+		Audio.Play ();
 		ReplayButton.SetActive (false);
 		BackGround.SetActive (false);
 
@@ -53,6 +62,9 @@ public class MainSystem : MonoBehaviour {
 				m_isGameEnd = true;
 				ReplayButton.SetActive (true);
 				BackGround.SetActive (true);
+
+				Audio.Stop();
+				Audio.PlayOneShot (END);
 				if (m_highScore < Score) {
 					SaveHighScore (Score);
 					Debug.Log ("high score updated : " + Score.ToString ());

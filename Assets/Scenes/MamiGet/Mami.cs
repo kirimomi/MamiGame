@@ -7,6 +7,7 @@ public class Mami : MonoBehaviour {
 	Vector3 m_speed = Vector3.zero;
 
 	public GameObject SerihuPrefab;
+	public AudioClip GetSe;
 
 	void Start () {
 		if (m_speed == Vector3.zero) {
@@ -30,6 +31,7 @@ public class Mami : MonoBehaviour {
 		if (MainSystem.Counter <= 0) {
 			return;
 		}else if (col.tag == "Player") {
+			MainSystem.Audio.PlayOneShot (GetSe);
 			MakeSerihu ("マミーン");
 			MainSystem.Score ++;
 			Destroy (gameObject);

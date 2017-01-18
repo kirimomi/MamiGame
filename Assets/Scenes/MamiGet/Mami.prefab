@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SerihuPrefab: {fileID: 1066437445872314, guid: 52719d3858dc08246b5319c9f0060f8b,
     type: 2}
+  GetSe: {fileID: 8300000, guid: 5c8eb80415aad344c9f4df023a1b32f5, type: 3}
 --- !u!212 &212366895936484300
 SpriteRenderer:
   m_ObjectHideFlags: 1
