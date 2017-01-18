@@ -8,6 +8,7 @@ public class Mami : MonoBehaviour {
 
 	public GameObject SerihuPrefab;
 	public AudioClip GetSe;
+	public AudioClip DropSe;
 
 	void Start () {
 		if (m_speed == Vector3.zero) {
@@ -21,6 +22,7 @@ public class Mami : MonoBehaviour {
 		if (0 < MainSystem.Counter) {
 			transform.position += m_speed * Time.deltaTime;
 			if (transform.position.y < -4.4f) {
+				MainSystem.Audio.PlayOneShot (DropSe);
 				MakeSerihu ("あーれー");
 				Destroy (gameObject);
 			}
