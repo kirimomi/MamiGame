@@ -80,7 +80,18 @@ public class MainSystem : MonoBehaviour
 
 		if (!m_isGameEnd) {
 
-			Color bgColor = m_endColor * (PLAY_TIME - Counter) / PLAY_TIME + m_startColor * Counter / PLAY_TIME;
+			//背景色
+			float h, s, v;
+			Color.RGBToHSV (m_endColor, out h, out s, out v);
+			h += Counter * 0.5f;
+			h %= 1;
+			Color trueEndColor = Color.HSVToRGB (h, s, v);
+
+			Color bgColor = trueEndColor * (PLAY_TIME - Counter) / PLAY_TIME + m_startColor * Counter / PLAY_TIME;
+
+			//Color bgColor = m_endColor * (PLAY_TIME - Counter) / PLAY_TIME + m_startColor * Counter / PLAY_TIME;
+			//Color bgColor = m_endColor;
+
 			BG.color = bgColor;
 
 			Counter -= Time.deltaTime;
