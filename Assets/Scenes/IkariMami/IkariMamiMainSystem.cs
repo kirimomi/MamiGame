@@ -20,7 +20,7 @@ public class IkariMamiMainSystem : MonoBehaviour
 
 	public Text TimeText;
 	public Text RecordText;
-	public GameObject ReplayButton;
+	public GameObject Buttons;
 
 	public GameObject LocatorRoot;
 	public Transform [] Locators;
@@ -120,7 +120,7 @@ public class IkariMamiMainSystem : MonoBehaviour
 		Audio.Play ();
 
 		Telop.SetActive (false);
-		ReplayButton.SetActive (false);
+		Buttons.SetActive (false);
 
 		m_fastestTime = LoadFastestTime ();
 		if (100f <= m_fastestTime ) {
@@ -239,7 +239,7 @@ public class IkariMamiMainSystem : MonoBehaviour
 
 		Audio.Stop ();
 		Audio.PlayOneShot (END);
-		ReplayButton.SetActive (true);
+		Buttons.SetActive (true);
 
 
 		Telop.GetComponent<Text> ().text = "Cleared!";
@@ -262,6 +262,12 @@ public class IkariMamiMainSystem : MonoBehaviour
 	{
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 	}
+
+	public void OnButtonReturn ()
+	{
+		SceneManager.LoadScene ("Selector");
+	}
+
 
 
 	const string FASTEST_TIME_KEY = "fastestTime";

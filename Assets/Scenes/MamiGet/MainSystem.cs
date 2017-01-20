@@ -18,7 +18,7 @@ public class MainSystem : MonoBehaviour
 	public Text HighScoreText;
 	public Text LowScoreText;
 
-	public GameObject ReplayButton;
+	public GameObject Buttons;
 	public GameObject BackGround;
 
 	public static AudioSource Audio;
@@ -42,7 +42,7 @@ public class MainSystem : MonoBehaviour
 		Audio = GetComponent<AudioSource> ();
 		Audio.clip = BGM;
 		Audio.Play ();
-		ReplayButton.SetActive (false);
+		Buttons.SetActive (false);
 		BackGround.SetActive (false);
 
 		m_startColor = new Color (195f / 256f, 195f / 256f, 195f / 256f, 1f);
@@ -98,7 +98,7 @@ public class MainSystem : MonoBehaviour
 			if (Counter < 0) {
 				Counter = 0;
 				m_isGameEnd = true;
-				ReplayButton.SetActive (true);
+				Buttons.SetActive (true);
 				BackGround.SetActive (true);
 
 				Audio.Stop ();
@@ -116,6 +116,11 @@ public class MainSystem : MonoBehaviour
 	public void OnButtonReplay ()
 	{
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+	}
+
+	public void OnButtonReturn ()
+	{
+		SceneManager.LoadScene ("Selector");
 	}
 
 	const string HIGH_SCORE_KEY = "highScore";

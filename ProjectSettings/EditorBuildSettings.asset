@@ -6,4 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MamiGet/main.unity
+    path: Assets/Scenes/Selector/Selector.unity
+  - enabled: 1
+    path: Assets/Scenes/MamiGet/MamiGet.unity
+  - enabled: 1
+    path: Assets/Scenes/IkariMami/IkariMami.unity
