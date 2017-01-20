@@ -18,10 +18,10 @@ public class Player : MonoBehaviour
 
 	const float PLAYER_SPD = 2.0f;
 
-	const float PLAYER_POS_LIMIT_X = 2.5f;
+	const float SCREEN_EDGE_X = 2.8f;
 
-	//const float SCALE_PER_MAMI = 0.015f;
-	const float SCALE_PER_MAMI = 0.18f;
+	//const float SCALE_PER_MAMI = 0.18f;
+	const float SCALE_PER_MAMI = 0.3f;
 
 	void Update ()
 	{
@@ -62,13 +62,23 @@ public class Player : MonoBehaviour
 				spd.x = -PLAYER_SPD;
 			}
 			Vector3 targetPos = transform.position + spd * Time.deltaTime;
-			targetPos.x = Mathf.Clamp (targetPos.x, -PLAYER_POS_LIMIT_X, PLAYER_POS_LIMIT_X);
+
+			float limitX = SCREEN_EDGE_X - GetPlayerRadius ();
+			targetPos.x = Mathf.Clamp (targetPos.x, -limitX, limitX);
 			transform.position = targetPos;
 		}
 
 		//プイレイヤーのスケール
 
-		transform.localScale = Vector3.one + Vector3.one * SCALE_PER_MAMI * Mathf.Sqrt (MainSystem.Score);
+		//transform.localScale = Vector3.one + Vector3.one * SCALE_PER_MAMI * Mathf.Sqrt (MainSystem.Score);
+		transform.localScale = Vector3.one * 0.7f + Vector3.one * SCALE_PER_MAMI * Mathf.Sqrt (MainSystem.Score);
 
+	}
+
+
+	float GetPlayerRadius(){
+		float radius = GetComponent<CircleCollider2D> ().radius * transform.localScale.x;
+		//Debug.Log ("radius is " + radius);
+		return radius;
 	}
 }

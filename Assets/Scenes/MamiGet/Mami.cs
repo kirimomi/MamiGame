@@ -29,6 +29,9 @@ public class Mami : MonoBehaviour {
 		}
 	}
 
+
+	const float SCREEN_EDGE_X = 2.8f;
+
 	void OnTriggerEnter2D(Collider2D col){
 		if (MainSystem.Counter <= 0) {
 			return;
@@ -39,6 +42,12 @@ public class Mami : MonoBehaviour {
 			Destroy (gameObject);
 		} else if (col.tag == "Wall") {
 			m_speed.x = -m_speed.x;
+			/*
+			if (0 < transform.position.x) {
+				transform.position = new Vector3 (transform.position.x - SCREEN_EDGE_X * 2f, transform.position.y, transform.position.z);
+			} else {
+				transform.position = new Vector3 (transform.position.x + SCREEN_EDGE_X * 2f, transform.position.y, transform.position.z);
+			}*/
 		}
 	}
 
