@@ -257,6 +257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6455e8b6a6247934c9114fb1dbb7edaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SE: {fileID: 8300000, guid: 661ea8751792dd34c87332f109ef4802, type: 3}
+  ButtonImage1: {fileID: 1734054934}
+  ButtonImage2: {fileID: 1186323703}
 --- !u!82 &597577160
 AudioSource:
   m_ObjectHideFlags: 0
@@ -553,11 +556,11 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 0.6102941, b: 0.6102941, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -607,7 +610,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -756,8 +759,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9854\u3092 \u30BF\u30C3\u30D7\u3057\u3066\n\u3059\u3079\u3066\u306E \u30DE\u30DF\u3092
-    \u3048\u304C\u304A\u306B"
+  m_Text: "\u9854\u3092 \u30BF\u30C3\u30D7\u3057\u3066\n\u3059\u3079\u3066 \u3048\u304C\u304A\u306E
+    \u30DE\u30DF\u306B\u3057\u3088\u3046"
 --- !u!222 &1356704783
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -894,11 +897,11 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 0.6117647, b: 0.6117647, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -948,7 +951,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1188,7 +1191,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30DE\u30DF\u96C6\u3081"
+  m_Text: "\u30DE\u30DF\u3042\u3064\u3081"
 --- !u!222 &2113591540
 CanvasRenderer:
   m_ObjectHideFlags: 0

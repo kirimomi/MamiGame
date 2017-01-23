@@ -25,6 +25,8 @@ public class IkariMamiMainSystem : MonoBehaviour
 	public GameObject LocatorRoot;
 	public Transform [] Locators;
 
+	public Slider WaveSlider;
+
 	struct WaveDef {
 		public int MamiNum;
 		public int NormalNum;
@@ -82,7 +84,7 @@ public class IkariMamiMainSystem : MonoBehaviour
 			ret.MamiNum = 8;
 			ret.NormalNum = 1;
 			ret.IkariNum = 4;
-			ret.NorioNum = 0;
+			ret.NorioNum = 2;
 			break;
 		case 8:
 			ret.MamiNum = 11;
@@ -211,10 +213,10 @@ public class IkariMamiMainSystem : MonoBehaviour
 
 
 	GameObject [] m_mamis;
-	bool m_isMamiMade = false;
+	bool m_isFirstMamiMade = false;
 
 	bool CheckClear(){
-		if (!m_isMamiMade) {
+		if (!m_isFirstMamiMade) {
 			return false;
 		}
 
@@ -234,15 +236,52 @@ public class IkariMamiMainSystem : MonoBehaviour
 
 
 	void MakeWave(int wave){
+
+		WaveSlider.value = (float)wave / (float)WAVE_MAX;
 		LocatorRoot.transform.position = Vector3.zero;
 
 		WaveDef def = GetWaveDefs (wave);
+
+		//各マミの表情を決める
+		IkariMami_Mami.MamiMode[] mode = new IkariMami_Mami.MamiMode[def.MamiNum];
+		//とりあえず規定数セット
+		int n = 0;
+		for(int i = 0; i < def.NormalNum; i++){
+			Assert.IsTrue (n < mode.Length , "wrong number");
+			mode [n] = IkariMami_Mami.MamiMode.Normal;
+			n++;
+		}
+		for(int i = 0; i < def.IkariNum; i++){
+			Assert.IsTrue (n < mode.Length , "wrong number");
+			mode [n] = IkariMami_Mami.MamiMode.Ikari;
+			n++;
+		}
+		for(int i = 0; i < def.NorioNum; i++){
+			Assert.IsTrue (n < mode.Length , "wrong number");
+			mode [n] = IkariMami_Mami.MamiMode.Norio;
+			n++;
+		}
+
+		//配列をシャッフルする
+		var random = new System.Random();
+		n = mode.Length;
+		while (1 < n)
+		{
+			n--;
+			int k = random.Next(n + 1);
+			var tmp = mode[k];
+			mode[k] = mode[n];
+			mode[n] = tmp;
+		}
+
+
 		m_mamis = new GameObject[def.MamiNum];
 		for(int i = 0; i < def.MamiNum; i++){
 			m_mamis[i] = Instantiate (MamiPrefab, Locators[i].position, Quaternion.identity);
 			m_mamis [i].transform.parent = LocatorRoot.transform;
+			m_mamis [i].GetComponent<IkariMami_Mami> ().Mode = mode [i];
 		}
-		m_isMamiMade = true;
+		m_isFirstMamiMade = true;
 	}
 
 	const float CLEAR_MOVE_SPEED = 20f;

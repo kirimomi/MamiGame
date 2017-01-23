@@ -126,7 +126,7 @@ MonoBehaviour:
     type: 2}
   SeGood: {fileID: 8300000, guid: 4e9dccdd0a53caa45b6485d6c507befe, type: 3}
   SeBad: {fileID: 8300000, guid: 6caf77fabab4d4444a4ede019478c20f, type: 3}
-  SeNorio: {fileID: 8300000, guid: 5c8eb80415aad344c9f4df023a1b32f5, type: 3}
+  SeNorio: {fileID: 8300000, guid: 2c960373cfc56704881edd950e5b8121, type: 3}
 --- !u!212 &212105327362322464
 SpriteRenderer:
   m_ObjectHideFlags: 1

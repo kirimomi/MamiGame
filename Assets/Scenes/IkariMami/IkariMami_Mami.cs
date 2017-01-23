@@ -30,13 +30,14 @@ public class IkariMami_Mami : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		/*
 		if (Random.value < 0.1f) {
 			m_mode = MamiMode.Ikari;
 		} else if(Random.value < 0.2f){
 			m_mode = MamiMode.Warai;
 		}else if(Random.value < 0.4f){
 			m_mode = MamiMode.Norio;
-		}
+		}*/
 
 		SetFaceSprite ();
 
