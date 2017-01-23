@@ -136,13 +136,46 @@ public class IkariMamiMainSystem : MonoBehaviour
 	}
 
 
-	IEnumerator Main(){
-		while (true) {
-			if (Input.GetMouseButtonDown (0)) {
-				Vector2 worldPoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+	bool m_isMainStart = false;
 
+	IEnumerator Main(){
+		if (m_isMainStart) {
+			yield break;
+		}
+		m_isMainStart = true;
+			
+
+		Debug.Log ("Main Start");
+		while (true) {
+
+			bool input = false;
+			Vector2 worldPoint = new Vector2();
+			if (Input.GetMouseButtonDown (0)) {
+				worldPoint = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+				input = true;
+			}
+
+			/*
+			if(0 < Input.touchCount){
+			Touch touch = Input.GetTouch(0);
+					worldPoint = Camera.main.ScreenToWorldPoint (touch.position);
+					input = true;
+			}*/
+
+			if(input){
 				//Debug.Log ("worldPoint :x" + worldPoint.x + "y:" + worldPoint.y);
 
+				//タッチをした位置にオブジェクトがあるかどうかを判定
+				Collider2D overlaped = Physics2D.OverlapPoint(worldPoint);
+				if (overlaped) {
+					if (overlaped.transform.gameObject.CompareTag("IkariMami_Mami")) {
+						overlaped.transform.gameObject.GetComponent<IkariMami_Mami> ().Touched ();
+					}
+				}
+
+
+
+				/*
 				//タッチをした位置にオブジェクトがあるかどうかを判定
 				RaycastHit2D hit = Physics2D.Raycast (worldPoint, Vector2.zero);
 				if (hit) {
@@ -153,7 +186,7 @@ public class IkariMamiMainSystem : MonoBehaviour
 							hit.collider.gameObject.GetComponent<IkariMami_Mami> ().Touched ();
 						}
 					}
-				}
+				}*/
 			}
 
 
@@ -178,12 +211,17 @@ public class IkariMamiMainSystem : MonoBehaviour
 
 
 	GameObject [] m_mamis;
+	bool m_isMamiMade = false;
 
 	bool CheckClear(){
+		if (!m_isMamiMade) {
+			return false;
+		}
 
 		/*if (m_mamis == null) {
 			return false;
 		}*/
+
 		for(int i=0; i < m_mamis.Length; i++){
 			if (m_mamis [i]) {
 				if (m_mamis [i].GetComponent<IkariMami_Mami> ().Mode != IkariMami_Mami.MamiMode.Warai) {
@@ -204,7 +242,7 @@ public class IkariMamiMainSystem : MonoBehaviour
 			m_mamis[i] = Instantiate (MamiPrefab, Locators[i].position, Quaternion.identity);
 			m_mamis [i].transform.parent = LocatorRoot.transform;
 		}
-
+		m_isMamiMade = true;
 	}
 
 	const float CLEAR_MOVE_SPEED = 20f;
