@@ -98,7 +98,7 @@ public class IkariMami_Mami : MonoBehaviour {
 
 	void MakeSerihu(string txt){
 		GameObject obj = Instantiate (SerihuPrefab, transform.position ,Quaternion.identity);
-		obj.transform.FindChild("TextMesh").GetComponent<TextMesh>().text = txt;
+		obj.transform.Find("TextMesh").GetComponent<TextMesh>().text = txt;
 	}
 
 }
