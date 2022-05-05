@@ -34,6 +34,8 @@ public class SarawareMami : MonoBehaviour
     public void Hit()
     {
         //マミーン
+        KikiGameManager.Instance.MakeSerihu("あ～れ～", this.transform.position + Vector3.down * 2.0f);
+        KikiGameManager.Instance.PlayAaree();
         this.transform.position += Vector3.forward * Z_DIST_AT_HIT;
     }
 
