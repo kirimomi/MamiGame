@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
                 }
 
                 //生きているマミに十分近づいたら、マミを手繰り寄せて消える
-                if (!KikiGameManager.SarawareMami.isDead && Vector3.Distance(this.transform.position, mamiPos) < HIT_DISTANCE)
+                if (!KikiGameManager.SarawareMami.IsDead && Vector3.Distance(this.transform.position, mamiPos) < HIT_DISTANCE)
                 {
                     KikiGameManager.SarawareMami.Hit();
                     //マミの子にする
@@ -63,10 +63,13 @@ public class Enemy : MonoBehaviour
 
     public void Dead()
     {
-        KikiGameManager.Instance.MakeSerihu("どぅえ", transform.position);
-        KikiGameManager.Instance.PlayDue();
-        KikiGameManager.Score++;
-        m_enemyPhase = EnemyPhase.dead;
+        if (m_enemyPhase != EnemyPhase.dead)
+        {
+            KikiGameManager.Instance.MakeSerihu("どぅえ", transform.position);
+            KikiGameManager.Instance.PlayDue();
+            KikiGameManager.Score++;
+            m_enemyPhase = EnemyPhase.dead;
+        }
     }
 
     public void SetSpeed(float speed)

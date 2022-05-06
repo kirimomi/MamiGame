@@ -19,6 +19,7 @@ public class KikiGameManager : MonoBehaviour
 
     [SerializeField] AudioClip m_due;
     [SerializeField] AudioClip m_aaree;
+    [SerializeField] AudioClip m_nyorimaan;
 
     [SerializeField] GameObject m_buttons;
 
@@ -89,7 +90,8 @@ public class KikiGameManager : MonoBehaviour
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if (Input.GetMouseButtonDown(0))
+            //if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 if (Physics.Raycast(ray, out hit))
                 {
@@ -103,17 +105,19 @@ public class KikiGameManager : MonoBehaviour
 
 
             //連れ去られた
-            if (MAMI_END_POS_Z < m_mami.transform.position.z)
+            if (!SarawareMami.IsDead && MAMI_END_POS_Z < m_mami.transform.position.z)
             {
                 SarawareMami.Dead();//死亡
+                Audio.Stop();
+                Audio.PlayOneShot(m_nyorimaan);
             }
 
             //マミが画面から消え、ゲーム終了
             if (20f < m_mami.transform.position.y)
             {
                 m_isGameEnd = true;
-                Audio.Stop();
-                Audio.PlayOneShot(m_end);
+
+                //Audio.PlayOneShot(m_end);
                 m_buttons.SetActive(true);
 
                 m_scoreText.color = Color.white;

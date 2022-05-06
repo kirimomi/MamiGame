@@ -14,7 +14,12 @@ public class Selector : MonoBehaviour
     public Image[] ButtonImage;
 
 
-    // Use this for initialization
+    void Awake()
+    {
+        //フレームレートの設定
+        Application.targetFrameRate = 60;
+    }
+
     void Start()
     {
         Audio = GetComponent<AudioSource>();

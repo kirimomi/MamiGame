@@ -11,14 +11,18 @@ public class SarawareMami : MonoBehaviour
     }
 
     const float Z_DIST_AT_HIT = 1.0f;
-    public bool isDead = false;
+    public bool IsDead
+    {
+        get { return m_isDead; }
 
+    }
 
+    bool m_isDead = false;
     const float DEAD_SPD_Y = 30f;
 
     void Update()
     {
-        if (isDead)
+        if (IsDead)
         {
             this.transform.position += Vector3.up * DEAD_SPD_Y * Time.deltaTime;
         }
@@ -27,7 +31,7 @@ public class SarawareMami : MonoBehaviour
 
     public void Dead()
     {
-        isDead = true;
+        m_isDead = true;
     }
 
 
