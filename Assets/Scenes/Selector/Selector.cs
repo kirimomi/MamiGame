@@ -11,8 +11,7 @@ public class Selector : MonoBehaviour
     public static AudioSource Audio;
     public AudioClip SE;
 
-    public Image ButtonImage1;
-    public Image ButtonImage2;
+    public Image[] ButtonImage;
 
 
     // Use this for initialization
@@ -49,14 +48,7 @@ public class Selector : MonoBehaviour
 
                 Image target;
 
-                if (m_pressedButton == 1)
-                {
-                    target = ButtonImage1;
-                }
-                else
-                {
-                    target = ButtonImage2;
-                }
+                target = ButtonImage[m_pressedButton - 1];
 
                 //点滅
                 target.color = Str2Color("#FF9C9CFF");
@@ -98,15 +90,19 @@ public class Selector : MonoBehaviour
 
     public void OnButtonMamiGet()
     {
-        //SceneManager.LoadScene ("MamiGet");
         m_pressedButton = 1;
         m_sceneName = "MamiGet";
     }
 
     public void OnButtonIkariMami()
     {
-        //SceneManager.LoadScene ("IkariMami");
         m_pressedButton = 2;
         m_sceneName = "IkariMami";
+    }
+
+    public void OnButtonKikiIppatsu()
+    {
+        m_pressedButton = 3;
+        m_sceneName = "KikiIppatsu";
     }
 }

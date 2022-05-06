@@ -7,7 +7,14 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Selector/Selector.unity
+    guid: 3fc1fd1613c73b94b8c6a737eb00c76a
   - enabled: 1
     path: Assets/Scenes/MamiGet/MamiGet.unity
+    guid: 03de4f4665086974aa61a9447377e9a7
   - enabled: 1
     path: Assets/Scenes/IkariMami/IkariMami.unity
+    guid: 033d567d241cb074c832b1098e892beb
+  - enabled: 1
+    path: Assets/Scenes/KikiIppatsu/KikiIppatsu.unity
+    guid: 7a609ee9c9181c94abbf024ba9bb96ab
+  m_configObjects: {}
