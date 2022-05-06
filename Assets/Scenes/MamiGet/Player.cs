@@ -73,14 +73,12 @@ public class Player : MonoBehaviour
         //===============タップした方向へ移動する===============
         if (Input.GetMouseButton(0))
         {
-            Vector3 spd = Vector3.zero;
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            spd.x = PLAYER_SPD * (mousePos.x < transform.position.x ? -1 : 1);
-            Vector3 targetPos = transform.position + spd * Time.deltaTime;
+            Vector3 targetPos = new Vector3(mousePos.x, transform.position.y, transform.position.z);
 
             float limitX = SCREEN_EDGE_X - GetPlayerRadius();
             targetPos.x = Mathf.Clamp(targetPos.x, -limitX, limitX);
-            transform.position = targetPos;
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, PLAYER_SPD * Time.deltaTime);
         }
 
 
