@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.NiceVibrations;
 using UnityEngine;
 
 public class IkariMami_Mami : MonoBehaviour
@@ -83,6 +84,8 @@ public class IkariMami_Mami : MonoBehaviour
                 break;
         }
         SetFaceSprite();
+        MMVibrationManager.Haptic(HapticTypes.LightImpact);
+
     }
 
     void SetFaceSprite()
