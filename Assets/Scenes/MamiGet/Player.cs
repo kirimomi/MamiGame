@@ -11,12 +11,7 @@ public class Player : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-
-    //const float PLAYER_MAX_SPD = 20.0f;
-    const float PLAYER_MAX_SPD = 200.0f;
-
-    const float PLAYER_SPD = 2.0f;
+    const float PLAYER_SPD = 4.0f;
 
     const float SCREEN_EDGE_X = 2.8f;
 
