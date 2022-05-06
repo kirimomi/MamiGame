@@ -155,7 +155,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.kirimomi.mamigame
     Standalone: "unity.Kirimomi.\u30D3\u30D0\u30FC\u30F3"
-    iPhone: com.Kirimomi.Test
+    iPhone: com.kirimomi.mamigame
     tvOS: com.Kirimomi.Test
   buildNumber:
     Standalone: 0
@@ -226,7 +226,7 @@ PlayerSettings:
   metalAPIValidation: 1
   iOSRenderExtraFrameOnPause: 1
   iosCopyPluginsCodeInsteadOfSymlink: 0
-  appleDeveloperTeamID: 
+  appleDeveloperTeamID: GTAT5465H2
   iOSManualSigningProvisioningProfileID: 
   tvOSManualSigningProvisioningProfileID: 
   iOSManualSigningProvisioningProfileType: 0
