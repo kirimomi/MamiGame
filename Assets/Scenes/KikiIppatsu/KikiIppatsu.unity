@@ -803,6 +803,8 @@ MonoBehaviour:
   m_due: {fileID: 8300000, guid: 2c960373cfc56704881edd950e5b8121, type: 3}
   m_aaree: {fileID: 8300000, guid: 6caf77fabab4d4444a4ede019478c20f, type: 3}
   m_buttons: {fileID: 482364594}
+  m_scoreText: {fileID: 1069450725}
+  m_highScoreText: {fileID: 2117545671}
 --- !u!1 &902611871
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1069450724
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1000,7 +1002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2299,7 +2301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2117545669
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2349,7 +2351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
