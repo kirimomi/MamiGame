@@ -726,8 +726,8 @@ MonoBehaviour:
   LowScoreText: {fileID: 2111716672}
   Buttons: {fileID: 482364594}
   BackGround: {fileID: 1326104053}
-  BGM: {fileID: 8300000, guid: 23c138066bf31e548b32a6702814c54b, type: 3}
-  END: {fileID: 8300000, guid: fcf243722c5f7304ab103c17fa0173c9, type: 3}
+  BGM: {fileID: 8300000, guid: 53745effd8368804aa9992d0d0549d90, type: 3}
+  END: {fileID: 8300000, guid: 0d66279b4a89dab499e616edc83d718f, type: 3}
   BG: {fileID: 1820456061}
 --- !u!82 &597577160
 AudioSource:
@@ -739,7 +739,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 23c138066bf31e548b32a6702814c54b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 53745effd8368804aa9992d0d0549d90, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
