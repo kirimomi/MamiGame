@@ -798,7 +798,7 @@ MonoBehaviour:
   m_mamiPosSlider: {fileID: 1952739523}
   m_serihuPrefab: {fileID: 1066437445872314, guid: 52719d3858dc08246b5319c9f0060f8b,
     type: 3}
-  m_bgm: {fileID: 8300000, guid: 23c138066bf31e548b32a6702814c54b, type: 3}
+  m_bgm: {fileID: 8300000, guid: 53745effd8368804aa9992d0d0549d90, type: 3}
   m_end: {fileID: 8300000, guid: fcf243722c5f7304ab103c17fa0173c9, type: 3}
   m_due: {fileID: 8300000, guid: 2c960373cfc56704881edd950e5b8121, type: 3}
   m_aaree: {fileID: 8300000, guid: 6caf77fabab4d4444a4ede019478c20f, type: 3}
