@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.NiceVibrations;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -67,7 +68,7 @@ public class Enemy : MonoBehaviour
         {
             KikiGameManager.Instance.MakeSerihu("どぅえ", transform.position);
             KikiGameManager.Instance.PlayDue();
-            Vibration.Short();
+            MMVibrationManager.Haptic(HapticTypes.LightImpact);
             KikiGameManager.Score++;
             m_enemyPhase = EnemyPhase.dead;
         }
