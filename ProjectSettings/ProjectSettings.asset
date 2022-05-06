@@ -804,7 +804,14 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Collab: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -818,11 +825,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 11d3eb18-67f1-4bdf-a5bd-72a7d3770d1c
+  cloudProjectId: 96f550b9-6610-41c5-bfe9-dbc600c37f4d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: AndroidTest
-  organizationId: kirimomi
+  projectName: "\u30DE\u30DF\u30B2\u30FC\u30E0 (1)"
+  organizationId: nmatsumura
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
   playerDataPath: 

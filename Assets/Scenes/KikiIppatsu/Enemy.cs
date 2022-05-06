@@ -67,6 +67,7 @@ public class Enemy : MonoBehaviour
         {
             KikiGameManager.Instance.MakeSerihu("どぅえ", transform.position);
             KikiGameManager.Instance.PlayDue();
+            Vibration.Short();
             KikiGameManager.Score++;
             m_enemyPhase = EnemyPhase.dead;
         }
