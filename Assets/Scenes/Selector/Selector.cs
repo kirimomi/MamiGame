@@ -23,7 +23,6 @@ public class Selector : MonoBehaviour
     void Start()
     {
         Audio = GetComponent<AudioSource>();
-        Audio.clip = SE;
         StartCoroutine(Main());
     }
 
@@ -49,7 +48,7 @@ public class Selector : MonoBehaviour
         {
             if (0 < m_pressedButton)
             {
-                Audio.Play();
+                Audio.PlayOneShot(SE);
 
                 Image target;
 
